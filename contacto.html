@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARCA — Membresía Plus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Some+Type+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS.css">
+
+</head>
+<body>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar" class="on-light">
+    <a href="INICIO.html" class="nav-logo">logotipo</a>
+
+    <div class="nav-center">
+        <input type="text" placeholder="" aria-label="Buscar">
+        <button aria-label="Buscar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+        </button>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="tienda.html" >Tienda</a></li>
+        <li><a href="laboratorio.html">Laboratorio</a></li>
+        <li><a href="contacto.html" class="nav-active">Contacto</a></li>
+        <li><a href="carro.html" class="cart-link">Carro</a></li>
+    </ul>
+</nav>
+
+<!-- ══════════ HABLEMOS fijo ══════════ -->
+<a href="#contacto" id="hablemos">Hablemos</a>
+
+<!-- ══════════ CONTENIDO PRINCIPAL ══════════ -->
+<main id="membresia-page" data-theme="light">
+
+    <!-- Layout de dos columnas grandes -->
+    <div class="mb-layout">
+
+        <!-- ── COLUMNA IZQUIERDA: producto ── -->
+        <div class="mb-col-producto">
+
+            <!-- Cabecera del producto -->
+            <div class="mb-producto-header">
+                <h1 class="mb-producto-titulo">Membresía Plus</h1>
+                <span class="mb-producto-precio">€ 15</span>
+            </div>
+
+            <!-- Imagen del producto -->
+            <div class="img-ph" style="height:580px;">
+                <img id="mb-main-img" src="imagenes/3.jpg" alt="Membresía Plus">
+                <!-- Placeholder: <div class="img-ph" style="height:500px;"></div> -->
+            </div>
+
+        </div>
+
+        <!-- ── COLUMNA DERECHA: plans ── -->
+        <div class="mb-col-planes">
+
+            <!-- Plan Básica -->
+            <div class="mb-plan" data-image="imagenes/3.jpg" data-price="€ 20">
+                <div class="mb-plan-header">
+                    <span class="mb-plan-nombre">Básica</span>
+                    <span class="mb-plan-icono">↗</span>
+                </div>
+                <div class="mb-plan-sep"></div>
+                <p class="mb-plan-desc">
+                    La membresía Básica te da acceso completo al proyecto.
+                    Por 20€ al año, puedes desbloquear todo el laboratorio
+                    digital, acceder a contenido exclusivo y ver la revista
+                    en formato digital.
+                </p>
+                <button class="mb-btn-carrito">&gt;Añadir al carrito</button>
+            </div>
+
+            <!-- Plan Plus -->
+            <div class="mb-plan" data-image="imagenes/vol01.jpg" data-price="€ 15">
+                <div class="mb-plan-header">
+                    <span class="mb-plan-nombre">Plus</span>
+                    <span class="mb-plan-icono">↗</span>
+                </div>
+                <div class="mb-plan-sep"></div>
+                <p class="mb-plan-desc">
+                    La membresía Plus incluye beneficios extra.
+                </p>
+                <button class="mb-btn-carrito">&gt;Añadir al carrito</button>
+            </div>
+
+            <!-- Plan Gratuita -->
+            <div class="mb-plan" data-image="imagenes/vol02.jpg" data-price="€ 0">
+                <div class="mb-plan-header">
+                    <span class="mb-plan-nombre">Gratuita</span>
+                    <span class="mb-plan-icono">↗</span>
+                </div>
+                <div class="mb-plan-sep"></div>
+                <p class="mb-plan-desc">
+                    Versión gratuita con acceso limitado pero suficiente para comenzar.
+                </p>
+                <button class="mb-btn-carrito">&gt;Añadir al carrito</button>
+            </div>
+
+        </div>
+
+        <!-- ── COLUMNA LATERAL DERECHA: cards ── -->
+        <div class="mb-col-lateral">
+
+            <!-- Card Contacto -->
+            <div class="mb-card">
+                <h2 class="mb-card-titulo">Contacto</h2>
+                <p class="mb-card-subtitulo">
+                    Ponte en contacto con nosotros<br>
+                    si tienes alguna duda
+                </p>
+
+                <div class="mb-form" id="mb-contact-form">
+                    <div class="mb-campo">
+                        <label for="mb-motivo">Motivo de la consulta</label>
+                        <input id="mb-motivo" type="text" />
+                        <div class="mb-campo-sep"></div>
+                    </div>
+                    <div class="mb-campo">
+                        <label for="mb-nombre">Nombre</label>
+                        <input id="mb-nombre" type="text" />
+                        <div class="mb-campo-sep"></div>
+                    </div>
+                    <div class="mb-campo">
+                        <label for="mb-email">Gmail</label>
+                        <input id="mb-email" type="email" />
+                        <div class="mb-campo-sep"></div>
+                    </div>
+                    <div class="mb-campo">
+                        <label for="mb-asunto">Asunto</label>
+                        <input id="mb-asunto" type="text" />
+                        <div class="mb-campo-sep"></div>
+                    </div>
+                    <button class="mb-btn-enviar" id="mb-send-btn">&gt;Enviar</button>
+                </div>
+            </div>
+
+            <!-- Card FAQs -->
+            <div class="mb-card">
+                <h2 class="mb-card-titulo">FAQs</h2>
+
+                <div class="mb-faqs">
+
+                    <div class="mb-faq-item">
+                        <div class="mb-faq-header">
+                            <span>Pedido y pago</span>
+                            <span class="mb-faq-icono">↗</span>
+                        </div>
+                        <div class="mb-faq-sep"></div>
+                        <div class="mb-faq-body">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-faq-item">
+                        <div class="mb-faq-header">
+                            <span>Envíos</span>
+                            <span class="mb-faq-icono">↗</span>
+                        </div>
+                        <div class="mb-faq-sep"></div>
+                        <div class="mb-faq-body">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-faq-item">
+                        <div class="mb-faq-header">
+                            <span>Cambios y devoluciones</span>
+                            <span class="mb-faq-icono">↗</span>
+                        </div>
+                        <div class="mb-faq-sep"></div>
+                        <div class="mb-faq-body">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-faq-item">
+                        <div class="mb-faq-header">
+                            <span>Producto</span>
+                            <span class="mb-faq-icono">↗</span>
+                        </div>
+                        <div class="mb-faq-sep"></div>
+                        <div class="mb-faq-body">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="mb-btn-enviar">&gt;Enviar</button>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="contacto" data-theme="dark">
+    <div class="footer-top">
+
+        <div class="footer-newsletter">
+            <p>¿Quieres hacerte miembro?</p>
+            <small>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                adipiscing elit, sed diam nonummy nibh<br>
+                euismod tincidunt ut laoreet dolore magna<span class="dot">●</span>
+            </small>
+            <div class="footer-email-row">
+                <input type="email" placeholder="correo@gmail.com" aria-label="Email">
+                <button aria-label="Enviar">→</button>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <ul class="footer-nav-list">
+                <li><a href="INICIO.html">Inicio</a></li>
+                <li><a href="tienda.html">Shop</a></li>
+                <li><a href="laboratorio.html">Laboratory</a></li>
+                <li><a href="carro.html">Cart</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Tik Tok</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 "MARCA"</span>
+        <div class="footer-bottom-links">
+            <a href="#">Términos y condiciones de compra</a>
+            <a href="#">Términos legales</a>
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Configurar cookies</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════ MINI CHAT WIDGET ══════════ -->
+<div id="chat-widget">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>Soporte</h3>
+            <button id="chat-close">×</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div class="chat-input-area">
+            <input id="chat-input" type="text" placeholder="Escribe tu mensaje...">
+            <button id="chat-send-btn">→</button>
+        </div>
+    </div>
+</div>
+
+<script src="java.js"></script>
+<script src="membresia.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>

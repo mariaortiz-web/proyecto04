@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARCA — Tienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Some+Type+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar" class="on-light">
+    <a href="INICIO.html" class="nav-logo">logotipo</a>
+
+    <div class="nav-center">
+        <input type="text" placeholder="" aria-label="Buscar">
+        <button aria-label="Buscar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+        </button>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="tienda.html" class="nav-active">Tienda</a></li>
+        <li><a href="laboratorio.html">Laboratorio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carro.html" class="cart-link">Carro</a></li>
+    </ul>
+</nav>
+
+<!-- ══════════ HABLEMOS fijo ══════════ -->
+<a href="#contacto" id="hablemos">Hablemos</a>
+
+<!-- ══════════ TIENDA ══════════ -->
+<main id="tienda" data-theme="light">
+
+    <h1 class="tienda-titulo reveal">Nuestros Productos</h1>
+
+    <!-- Filtros opcionales -->
+    <div class="tienda-filtros reveal">
+        <button class="filtro-btn active" data-filter="all">Todos</button>
+        <button class="filtro-btn" data-filter="nuevo">Nuevo</button>
+        <button class="filtro-btn" data-filter="revista">Revista</button>
+    </div>
+
+    <!-- Grid de productos -->
+    <div class="tienda-grid">
+
+        <!-- Producto 1 -->
+        <div class="latest-item reveal" data-category="nuevo revista">
+            <div class="latest-img-wrap">
+                <span class="latest-badge">NUEVO</span>
+                <img src="imagenes/vol01.jpg" alt="Vol. 01 Las Solanaceas">
+            </div>
+            <div class="latest-info">
+                <span class="latest-item-label">Vol. 01 Las Solanaceas</span>
+                <span class="latest-price">€ 20.5</span>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="latest-item reveal" data-category="nuevo revista">
+            <div class="latest-img-wrap">
+                <span class="latest-badge">NUEVO</span>
+                <img src="imagenes/vol02.jpg" alt="Vol. 01 Las Solanaceas">
+            </div>
+            <div class="latest-info">
+                <span class="latest-item-label">Vol. 01 Las Solanaceas</span>
+                <span class="latest-price">€ 20.5</span>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="latest-item reveal" data-category="nuevo revista">
+            <div class="latest-img-wrap">
+                <span class="latest-badge">NUEVO</span>
+                <img src="imagenes/vol03.jpg" alt="Vol. 01 Las Solanaceas">
+            </div>
+            <div class="latest-info">
+                <span class="latest-item-label">Vol. 01 Las Solanaceas</span>
+                <span class="latest-price">€ 20.5</span>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="latest-item reveal" data-category="revista">
+            <div class="latest-img-wrap">
+                <img src="imagenes/vol04.jpg" alt="Vol. 02 Las Solanaceas">
+                <!-- <div class="img-ph"></div> -->
+            </div>
+            <div class="latest-info">
+                <span class="latest-item-label">Vol. 02 Las Solanaceas</span>
+                <span class="latest-price">€ 20.5</span>
+            </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="latest-item reveal" data-category="revista">
+            <div class="latest-img-wrap">
+                <img src="imagenes/vol05.jpg" alt="Vol. 02 Las Solanaceas">
+            </div>
+            <div class="latest-info">
+                <span class="latest-item-label">Vol. 02 Las Solanaceas</span>
+                <span class="latest-price">€ 20.5</span>
+            </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="latest-item reveal" data-category="revista">
+            <div class="latest-img-wrap">
+                <img src="imagenes/vol06.jpg" alt="Vol. 02 Las Solanaceas">
+            </div>
+            <div class="latest-info">
+                <span class="latest-item-label">Vol. 02 Las Solanaceas</span>
+                <span class="latest-price">€ 20.5</span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="contacto" data-theme="dark">
+    <div class="footer-top">
+
+        <div class="footer-newsletter">
+            <p>¿Quieres enterarte de las<br>últimas noticias?</p>
+            <small>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                adipiscing elit, sed diam nonummy nibh<br>
+                euismod tincidunt ut laoreet dolore magnu<span class="dot">●</span>
+            </small>
+            <div class="footer-email-row">
+                <input type="email" placeholder="correo@gmail.com" aria-label="Email">
+                <button aria-label="Enviar">→</button>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <ul class="footer-nav-list">
+                <li><a href="INICIO.html">Inicio</a></li>
+                <li><a href="tienda.html">Shop</a></li>
+                <li><a href="laboratorio.html">Laboratory</a></li>
+                <li><a href="carro.html">Cart</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Tik Tok</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 "MARCA"</span>
+        <div class="footer-bottom-links">
+            <a href="#">Términos y condiciones de compra</a>
+            <a href="#">Términos legales</a>
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Configurar cookies</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════ MINI CHAT WIDGET ══════════ -->
+<div id="chat-widget">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>Soporte</h3>
+            <button id="chat-close">×</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div class="chat-input-area">
+            <input id="chat-input" type="text" placeholder="Escribe tu mensaje...">
+            <button id="chat-send-btn">→</button>
+        </div>
+    </div>
+</div>
+
+<script src="java.js"></script>
+<script src="tienda.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>
