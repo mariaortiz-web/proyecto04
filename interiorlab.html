@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARCA — Laboratorio Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Some+Type+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="laboratorio.css">
+</head>
+<body>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar" class="on-light">
+    <a href="index.html" class="nav-logo">logotipo</a>
+
+    <div class="nav-center">
+        <input type="text" placeholder="" aria-label="Buscar">
+        <button aria-label="Buscar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+        </button>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="laboratorio.html" class="nav-active">Laboratorio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carro.html" class="cart-link">Carro</a></li>
+        <!-- Indicador sesión activa -->
+        <li>
+            <button id="lab-logout-btn" class="lab-logout-btn" title="Cerrar sesión">
+                ← Salir
+            </button>
+        </li>
+    </ul>
+</nav>
+
+<!-- ══════════ INTERIOR DEL LABORATORIO ══════════ -->
+<main id="lab-interior" data-theme="light">
+
+    <!-- Cabecera bienvenida -->
+    <div class="lab-int-header reveal">
+        <div class="lab-int-header-text">
+            <p class="lab-int-bienvenida">Bienvenido al laboratorio</p>
+            <h1 class="lab-int-titulo">Experimenta y<br>descubre todo sobre...</h1>
+        </div>
+        <div class="lab-int-header-meta">
+            <span class="lab-int-badge">Membresía Plus</span>
+            <span class="lab-int-acceso">Acceso completo</span>
+        </div>
+    </div>
+
+    <div class="lab-int-sep"></div>
+
+    <!-- Grid de contenidos -->
+    <div class="lab-int-grid">
+
+        <!-- Artículo destacado grande -->
+        <article class="lab-int-card lab-int-card-grande reveal">
+            <div class="lab-int-card-img">
+                <!-- <img src="imagenes/lab-01.jpg" alt="Solanum Lycopersicum"> -->
+                <div class="img-ph" style="height:100%; min-height:340px;"></div>
+                <div class="lab-int-card-overlay">
+                    <span class="lab-int-card-categoria">Solanáceas</span>
+                </div>
+            </div>
+            <div class="lab-int-card-info">
+                <h2 class="lab-int-card-titulo">Solanum Lycopersicum</h2>
+                <p class="lab-int-card-desc">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore.
+                </p>
+                <a href="#" class="lab-int-card-link">Explorar →</a>
+            </div>
+        </article>
+
+        <!-- Artículo mediano 1 -->
+        <article class="lab-int-card lab-int-card-medio reveal">
+            <div class="lab-int-card-img">
+                <div class="img-ph" style="height:100%; min-height:200px;"></div>
+                <div class="lab-int-card-overlay">
+                    <span class="lab-int-card-categoria">Solanáceas</span>
+                </div>
+            </div>
+            <div class="lab-int-card-info">
+                <h2 class="lab-int-card-titulo">Capsicum Annuum</h2>
+                <p class="lab-int-card-desc">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </p>
+                <a href="#" class="lab-int-card-link">Explorar →</a>
+            </div>
+        </article>
+
+        <!-- Artículo mediano 2 -->
+        <article class="lab-int-card lab-int-card-medio reveal">
+            <div class="lab-int-card-img">
+                <div class="img-ph" style="height:100%; min-height:200px;"></div>
+                <div class="lab-int-card-overlay">
+                    <span class="lab-int-card-categoria">Solanáceas</span>
+                </div>
+            </div>
+            <div class="lab-int-card-info">
+                <h2 class="lab-int-card-titulo">Solanum Melongena</h2>
+                <p class="lab-int-card-desc">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </p>
+                <a href="#" class="lab-int-card-link">Explorar →</a>
+            </div>
+        </article>
+
+        <!-- Artículo mediano 3 -->
+        <article class="lab-int-card lab-int-card-medio reveal">
+            <div class="lab-int-card-img">
+                <div class="img-ph" style="height:100%; min-height:200px;"></div>
+                <div class="lab-int-card-overlay">
+                    <span class="lab-int-card-categoria">Solanáceas</span>
+                </div>
+            </div>
+            <div class="lab-int-card-info">
+                <h2 class="lab-int-card-titulo">Physalis Peruviana</h2>
+                <p class="lab-int-card-desc">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </p>
+                <a href="#" class="lab-int-card-link">Explorar →</a>
+            </div>
+        </article>
+
+        <!-- Artículo mediano 4 -->
+        <article class="lab-int-card lab-int-card-medio reveal">
+            <div class="lab-int-card-img">
+                <div class="img-ph" style="height:100%; min-height:200px;"></div>
+                <div class="lab-int-card-overlay">
+                    <span class="lab-int-card-categoria">Solanáceas</span>
+                </div>
+            </div>
+            <div class="lab-int-card-info">
+                <h2 class="lab-int-card-titulo">Nicotiana Tabacum</h2>
+                <p class="lab-int-card-desc">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </p>
+                <a href="#" class="lab-int-card-link">Explorar →</a>
+            </div>
+        </article>
+
+        <!-- Card exclusivo: revista digital -->
+        <article class="lab-int-card lab-int-card-exclusivo reveal">
+            <div class="lab-int-exclusivo-inner">
+                <span class="lab-int-exclusivo-tag">Exclusivo miembros</span>
+                <h2 class="lab-int-card-titulo">Revista digital<br>Vol. 01</h2>
+                <p class="lab-int-card-desc">
+                    Accede a la versión digital completa de la revista
+                    Las Solanaceas, con contenido ampliado y material extra.
+                </p>
+                <a href="#" class="lab-int-card-link lab-int-card-link-inv">
+                    Leer ahora →
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="contacto" data-theme="dark">
+    <div class="footer-top">
+
+        <div class="footer-newsletter">
+            <p>¿Quieres enterarte de las<br>últimas noticias?</p>
+            <small>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                adipiscing elit, sed diam nonummy nibh<br>
+                euismod tincidunt ut laoreet dolore magnu<span class="dot">●</span>
+            </small>
+            <div class="footer-email-row">
+                <input type="email" placeholder="correo@gmail.com" aria-label="Email">
+                <button aria-label="Enviar">→</button>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <ul class="footer-nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tienda.html">Shop</a></li>
+                <li><a href="lab-interior.html">Laboratory</a></li>
+                <li><a href="carro.html">Cart .</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Tik Tok</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 "MARCA"</span>
+        <div class="footer-bottom-links">
+            <a href="#">Términos y condiciones de compra</a>
+            <a href="#">Términos legales</a>
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Configurar cookies</a>
+        </div>
+    </div>
+</footer>
+
+<script src="java.js"></script>
+<script src="laboratorio.js"></script>
+</body>
+</html>

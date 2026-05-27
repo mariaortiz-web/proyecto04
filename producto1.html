@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARCA — Vol. 01 Las Solanaceas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Some+Type+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="producto.css">
+</head>
+<body>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar" class="on-light">
+    <a href="index.html" class="nav-logo">logotipo</a>
+
+    <div class="nav-center">
+        <input type="text" placeholder="" aria-label="Buscar">
+        <button aria-label="Buscar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+        </button>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="tienda.html" class="nav-active">Tienda</a></li>
+        <li><a href="laboratorio.html">Laboratorio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carro.html" class="cart-link">Carro</a></li>
+    </ul>
+</nav>
+
+<!-- ══════════ PRODUCTO ══════════ -->
+<main id="producto-page" data-theme="light">
+
+    <div class="prod-layout">
+
+        <!-- ══ GALERÍA FLOTANTE ══ -->
+        <div class="prod-galeria" id="prod-galeria">
+
+            <!-- Las imágenes flotan libremente con posiciones absolutas -->
+            <!-- Cada una tiene su propia velocidad de flotación vía data-speed -->
+
+            <div class="prod-img-float" id="img-1" data-speed="1"
+                 style="top: 6%; left: 7%; width: 22%;">
+                <img src="imagenes/vol01-a.jpg" alt="Vol.01 detalle 1">
+                <!-- <div class="img-ph" style="height: 160px;"></div> -->
+            </div>
+
+            <div class="prod-img-float" id="img-2" data-speed="1.6"
+                 style="top: 3%; left: 34%; width: 17%;">
+                <img src="imagenes/vol01-b.jpg" alt="Vol.01 detalle 2">
+            </div>
+
+            <div class="prod-img-float" id="img-3" data-speed="0.8"
+                 style="top: 22%; left: 13%; width: 24%;">
+                <img src="imagenes/vol01-c.jpg" alt="Vol.01 detalle 3">
+            </div>
+
+            <div class="prod-img-float" id="img-4" data-speed="1.3"
+                 style="top: 30%; left: 43%; width: 10%;">
+                <img src="imagenes/vol01-d.jpg" alt="Vol.01 detalle 4">
+            </div>
+
+            <div class="prod-img-float" id="img-5" data-speed="0.9"
+                 style="top: 55%; left: 6%; width: 17%;">
+                <img src="imagenes/vol01-e.jpg" alt="Vol.01 detalle 5">
+            </div>
+
+            <div class="prod-img-float" id="img-6" data-speed="1.4"
+                 style="top: 65%; left: 25%; width: 15%;">
+                <img src="imagenes/vol01-f.jpg" alt="Vol.01 detalle 6">
+            </div>
+
+            <div class="prod-img-float" id="img-7" data-speed="1.1"
+                 style="top: 10%; left: 47%; width: 8%;">
+                <img src="imagenes/vol01-g.jpg" alt="Vol.01 detalle 7">
+            </div>
+
+        </div>
+
+        <!-- ══ CARD DE PRODUCTO ══ -->
+        <div class="prod-card reveal">
+
+            <!-- Cabecera -->
+            <div class="prod-card-header">
+                <h1 class="prod-titulo">Vol. 01 Las<br>Solanaceas</h1>
+                <span class="prod-precio">€ 20.5</span>
+            </div>
+
+            <!-- Descripción colapsable -->
+            <div class="prod-desc-bloque">
+                <div class="prod-desc-header" id="prod-desc-toggle">
+                    <span class="prod-desc-label">Description</span>
+                    <span class="prod-desc-icono" id="prod-desc-icono">[+]</span>
+                </div>
+                <div class="prod-desc-sep"></div>
+                <div class="prod-desc-body" id="prod-desc-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer
+                        adipiscing elit, sed diam nonummy nibh
+                        euismod tincidunt ut laoreet dolore magna
+                        aliquam erat volutpat. Ut wisi enim ad
+                        Lorem ipsum dolor sit amet, consectetuer
+                        adipiscing elit, sed diam nonummy nibh
+                    </p>
+                </div>
+            </div>
+
+            <!-- Especificaciones -->
+            <div class="prod-specs">
+
+                <div class="prod-spec-item">
+                    <span>50 Páginas</span>
+                    <div class="prod-spec-sep"></div>
+                </div>
+
+                <div class="prod-spec-item">
+                    <span>Lorem ipsum dolor</span>
+                    <div class="prod-spec-sep"></div>
+                </div>
+
+                <div class="prod-spec-item">
+                    <span>Lorem ipsum dolor</span>
+                    <div class="prod-spec-sep"></div>
+                </div>
+
+                <div class="prod-spec-item">
+                    <span>Lorem ipsum dolor</span>
+                    <div class="prod-spec-sep"></div>
+                </div>
+
+            </div>
+
+            <!-- Botón añadir al carrito -->
+            <button id="prod-btn-carrito" class="prod-btn-carrito">
+                Añadir al carrito
+            </button>
+
+        </div>
+
+        <!-- Imágenes laterales derechas (círculos) -->
+        <div class="prod-img-float prod-img-right-1" data-speed="1.2"
+             style="top: 18%; right: -2%; width: 11%;">
+            <img src="imagenes/vol01-h.jpg" alt="detalle circular 1"
+                 style="border-radius: 50%;">
+        </div>
+
+        <div class="prod-img-float prod-img-right-2" data-speed="0.7"
+             style="top: 62%; right: -1%; width: 9%;">
+            <img src="imagenes/vol01-i.jpg" alt="detalle circular 2"
+                 style="border-radius: 50%;">
+        </div>
+
+    </div>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="contacto" data-theme="dark">
+    <div class="footer-top">
+
+        <div class="footer-newsletter">
+            <p>¿Quieres hacerte miembro?</p>
+            <small>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                adipiscing elit, sed diam nonummy nibh<br>
+                euismod tincidunt ut laoreet dolore magnu<span class="dot">●</span>
+            </small>
+            <div class="footer-email-row">
+                <input type="email" placeholder="correo@gmail.com" aria-label="Email">
+                <button aria-label="Enviar">→</button>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <ul class="footer-nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tienda.html">Shop</a></li>
+                <li><a href="laboratorio.html">Laboratory</a></li>
+                <li><a href="carro.html">Cart .</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Tik Tok</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 "MARCA"</span>
+        <div class="footer-bottom-links">
+            <a href="#">Términos y condiciones de compra</a>
+            <a href="#">Términos legales</a>
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Configurar cookies</a>
+        </div>
+    </div>
+</footer>
+
+<script src="java.js"></script>
+<script src="producto.js"></script>
+</body>
+</html>

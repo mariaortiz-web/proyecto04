@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MARCA — Laboratorio</title>
     <link href="https://fonts.googleapis.com/css2?family=Some+Type+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="laboratorio.css">
 </head>
 <body>
 
-<!-- NAVBAR (copiado de INICIO.html) -->
-<nav id="navbar" class="on-light">
-    <span class="nav-logo">logotipo</span>
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar" class="on-dark">
+    <a href="index.html" class="nav-logo">logotipo</a>
 
     <div class="nav-center">
         <input type="text" placeholder="" aria-label="Buscar">
         <button aria-label="Buscar">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="7"/>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
@@ -24,26 +26,88 @@
     </div>
 
     <ul class="nav-links">
-        <li><a href="tienda.html">Tienda</a></li>
-        <li><a href="laboratorio.html">Laboratorio</a></li>
+        <li><a href="index.html">Tienda</a></li>
+        <li><a href="laboratorio.html" class="nav-active">Laboratorio</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="carro.html" class="cart-link">Carro</a></li>
     </ul>
 </nav>
 
-<!-- Contenido específico de la página -->
-<main style="padding: calc(var(--nav-h) + 20px) 4% 60px;">
-    <h1>Laboratorio</h1>
-    <p>Página de laboratorio. Agrega aquí el contenido del slider u otros experimentos.</p>
-</main>
+<!-- ══════════ HERO LOGIN ══════════ -->
+<section id="lab-hero" data-theme="dark">
 
-<!-- FOOTER (copiado de INICIO.html) -->
+    <!-- Imagen de fondo -->
+    <!-- Sustituir el div por: <img class="lab-hero-bg-img" src="imagenes/lab-bg.jpg" alt=""> -->
+    <div class="lab-hero-bg"></div>
+
+    <!-- Card de login centrada -->
+    <div class="lab-login-card">
+
+        <h1 class="lab-login-titulo">Adéntrate en el<br>Laboratorio</h1>
+
+        <div class="lab-login-campos">
+
+            <!-- Email -->
+            <div class="lab-campo-wrap">
+                <input
+                        type="email"
+                        id="lab-email"
+                        class="lab-input"
+                        placeholder="Correo Electrónico"
+                        autocomplete="email"
+                        aria-label="Correo electrónico"
+                >
+            </div>
+
+            <!-- Contraseña -->
+            <div class="lab-campo-wrap">
+                <input
+                        type="password"
+                        id="lab-password"
+                        class="lab-input"
+                        placeholder="Contraseña"
+                        autocomplete="current-password"
+                        aria-label="Contraseña"
+                >
+                <button class="lab-pass-toggle" id="lab-pass-toggle"
+                        aria-label="Mostrar contraseña" tabindex="-1">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mensaje de error -->
+            <p id="lab-error-msg" class="lab-error-msg"></p>
+
+        </div>
+
+        <!-- Enlace recuperar contraseña -->
+        <a href="#" class="lab-olvidaste">¿Olvidaste tu contraseña?</a>
+
+        <!-- Botón acceder -->
+        <button id="lab-btn-entrar" class="lab-btn-entrar">
+            Únirme
+        </button>
+
+        <!-- Enlace a membresía -->
+        <p class="lab-sin-cuenta">
+            ¿No tienes suscripción?
+            <a href="membresia.html" class="lab-link-membresia">Hazte miembro →</a>
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
 <footer id="contacto" data-theme="dark">
     <div class="footer-top">
 
-        <!-- Newsletter -->
         <div class="footer-newsletter">
-            <p>¿Quieres enterarte de las<br>últimas noticias?</p>
+            <p>¿Quieres hacerte miembro?</p>
             <small>
                 Lorem ipsum dolor sit amet, consectetuer<br>
                 adipiscing elit, sed diam nonummy nibh<br>
@@ -55,26 +119,23 @@
             </div>
         </div>
 
-        <!-- Navegación -->
         <div class="footer-col">
             <ul class="footer-nav-list">
-                <li><a href="INICIO.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="tienda.html">Shop</a></li>
                 <li><a href="laboratorio.html">Laboratory</a></li>
                 <li><a href="carro.html">Cart .</a></li>
             </ul>
         </div>
 
-        <!-- Información -->
         <div class="footer-col">
             <h4>Información</h4>
             <ul class="footer-nav-list">
-                <li><a href="contacto.html">Sobre nosotros</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
 
-        <!-- Redes Sociales -->
         <div class="footer-col">
             <h4>Redes Sociales</h4>
             <ul class="footer-nav-list">
@@ -99,5 +160,6 @@
 </footer>
 
 <script src="java.js"></script>
+<script src="laboratorio.js"></script>
 </body>
 </html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARCA — Tramitar Pedido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Some+Type+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="pago.css">
+</head>
+<body>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar" class="on-light">
+    <a href="index.html" class="nav-logo">logotipo</a>
+
+    <div class="nav-center">
+        <input type="text" placeholder="" aria-label="Buscar">
+        <button aria-label="Buscar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+        </button>
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="laboratorio.html">Laboratorio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carro.html" class="cart-link">Carro</a></li>
+    </ul>
+</nav>
+
+<!-- ══════════ PÁGINA DE PAGO ══════════ -->
+<main id="pago-page" data-theme="light">
+
+    <!-- Migas de pan -->
+    <div class="pago-breadcrumb reveal">
+        <a href="carro.html">Carro</a>
+        <span>›</span>
+        <span class="pago-breadcrumb-active">Datos de compra</span>
+        <span>›</span>
+        <span class="pago-breadcrumb-inactive">Confirmación</span>
+    </div>
+
+    <div class="pago-layout">
+
+        <!-- ══ COLUMNA IZQUIERDA: formularios ══ -->
+        <div class="pago-formularios">
+
+            <!-- Bloque 1: Información de contacto -->
+            <div class="pago-bloque reveal">
+                <h2 class="pago-bloque-titulo">
+                    <span class="pago-bloque-num">01</span>
+                    Información de contacto
+                </h2>
+
+                <div class="pago-campos">
+                    <div class="pago-fila-dos">
+                        <div class="pago-campo">
+                            <label for="p-nombre">Nombre</label>
+                            <input type="text" id="p-nombre" placeholder=" " autocomplete="given-name">
+                            <div class="pago-campo-line"></div>
+                        </div>
+                        <div class="pago-campo">
+                            <label for="p-apellido">Apellido</label>
+                            <input type="text" id="p-apellido" placeholder=" " autocomplete="family-name">
+                            <div class="pago-campo-line"></div>
+                        </div>
+                    </div>
+                    <div class="pago-campo">
+                        <label for="p-email">Email</label>
+                        <input type="email" id="p-email" placeholder=" " autocomplete="email">
+                        <div class="pago-campo-line"></div>
+                    </div>
+                    <div class="pago-campo">
+                        <label for="p-telefono">Número de teléfono</label>
+                        <input type="tel" id="p-telefono" placeholder=" " autocomplete="tel">
+                        <div class="pago-campo-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pago-sep"></div>
+
+            <!-- Bloque 2: Información de envío -->
+            <div class="pago-bloque reveal">
+                <h2 class="pago-bloque-titulo">
+                    <span class="pago-bloque-num">02</span>
+                    Información de envío
+                </h2>
+
+                <div class="pago-campos">
+                    <div class="pago-campo">
+                        <label for="p-direccion">Dirección</label>
+                        <input type="text" id="p-direccion" placeholder=" " autocomplete="street-address">
+                        <div class="pago-campo-line"></div>
+                    </div>
+                    <div class="pago-fila-dos">
+                        <div class="pago-campo">
+                            <label for="p-numero">Número / Piso</label>
+                            <input type="text" id="p-numero" placeholder=" ">
+                            <div class="pago-campo-line"></div>
+                        </div>
+                        <div class="pago-campo">
+                            <label for="p-cp">Código postal</label>
+                            <input type="text" id="p-cp" placeholder=" " autocomplete="postal-code">
+                            <div class="pago-campo-line"></div>
+                        </div>
+                    </div>
+                    <div class="pago-fila-dos">
+                        <div class="pago-campo">
+                            <label for="p-ciudad">Ciudad</label>
+                            <input type="text" id="p-ciudad" placeholder=" " autocomplete="address-level2">
+                            <div class="pago-campo-line"></div>
+                        </div>
+                        <div class="pago-campo">
+                            <label for="p-pais">País</label>
+                            <select id="p-pais" autocomplete="country">
+                                <option value="">Selecciona</option>
+                                <option value="ES">España</option>
+                                <option value="MX">México</option>
+                                <option value="AR">Argentina</option>
+                                <option value="CO">Colombia</option>
+                                <option value="CL">Chile</option>
+                                <option value="PE">Perú</option>
+                                <option value="OTHER">Otro</option>
+                            </select>
+                            <div class="pago-campo-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pago-sep"></div>
+
+            <!-- Bloque 3: Información de pago -->
+            <div class="pago-bloque reveal">
+                <h2 class="pago-bloque-titulo">
+                    <span class="pago-bloque-num">03</span>
+                    Información de pago
+                </h2>
+
+                <div class="pago-campos">
+                    <div class="pago-campo">
+                        <label for="p-tarjeta">Número de tarjeta</label>
+                        <input
+                                type="text"
+                                id="p-tarjeta"
+                                placeholder=" "
+                                maxlength="19"
+                                autocomplete="cc-number"
+                        >
+                        <div class="pago-campo-line"></div>
+                    </div>
+                    <div class="pago-fila-tres">
+                        <div class="pago-campo">
+                            <label for="p-exp">Expiración (MM/AA)</label>
+                            <input
+                                    type="text"
+                                    id="p-exp"
+                                    placeholder=" "
+                                    maxlength="5"
+                                    autocomplete="cc-exp"
+                            >
+                            <div class="pago-campo-line"></div>
+                        </div>
+                        <div class="pago-campo">
+                            <label for="p-cvv">Código de seguridad</label>
+                            <input
+                                    type="text"
+                                    id="p-cvv"
+                                    placeholder=" "
+                                    maxlength="4"
+                                    autocomplete="cc-csc"
+                            >
+                            <div class="pago-campo-line"></div>
+                        </div>
+                        <div class="pago-campo">
+                            <label for="p-titular">Nombre en la tarjeta</label>
+                            <input
+                                    type="text"
+                                    id="p-titular"
+                                    placeholder=" "
+                                    autocomplete="cc-name"
+                            >
+                            <div class="pago-campo-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón realizar pedido -->
+            <div class="pago-accion reveal">
+                <button id="pago-btn-realizar" class="pago-btn-realizar">
+                    &gt; Realizar pedido
+                </button>
+                <a href="carro.html" class="pago-volver">← Volver al carro</a>
+            </div>
+
+        </div>
+
+        <!-- ══ COLUMNA DERECHA: resumen ══ -->
+        <div class="pago-resumen reveal">
+
+            <h3 class="pago-resumen-titulo">Resumen</h3>
+            <div class="pago-sep"></div>
+
+            <!-- Items del pedido -->
+            <div class="pago-resumen-items">
+
+                <div class="pago-resumen-item">
+                    <div class="pago-resumen-item-img">
+                        <img src="imagenes/vol01.jpg" alt="Vol. 01">
+                        <!-- <div class="img-ph" style="height:100%;"></div> -->
+                        <span class="pago-resumen-cant">1</span>
+                    </div>
+                    <div class="pago-resumen-item-info">
+                        <span class="pago-resumen-item-nombre">Vol. 01 Las Solanaceas</span>
+                        <span class="pago-resumen-item-var">Membresía Básica</span>
+                    </div>
+                    <span class="pago-resumen-item-precio">€ 20.5</span>
+                </div>
+
+                <div class="pago-resumen-item">
+                    <div class="pago-resumen-item-img">
+                        <img src="imagenes/vol02.jpg" alt="Vol. 02">
+                        <span class="pago-resumen-cant">1</span>
+                    </div>
+                    <div class="pago-resumen-item-info">
+                        <span class="pago-resumen-item-nombre">Vol. 02 Las Solanaceas</span>
+                        <span class="pago-resumen-item-var">Membresía Plus</span>
+                    </div>
+                    <span class="pago-resumen-item-precio">€ 20.5</span>
+                </div>
+
+                <div class="pago-resumen-item">
+                    <div class="pago-resumen-item-img">
+                        <img src="imagenes/vol03.jpg" alt="Vol. 03">
+                        <span class="pago-resumen-cant">1</span>
+                    </div>
+                    <div class="pago-resumen-item-info">
+                        <span class="pago-resumen-item-nombre">Vol. 03 Las Solanaceas</span>
+                        <span class="pago-resumen-item-var">Gratuita</span>
+                    </div>
+                    <span class="pago-resumen-item-precio">€ 20.5</span>
+                </div>
+
+            </div>
+
+            <div class="pago-sep"></div>
+
+            <!-- Cupón -->
+            <div class="pago-resumen-cupon">
+                <div class="pago-cupon-row">
+                    <input
+                            type="text"
+                            id="pago-cupon-input"
+                            placeholder="Código de descuento"
+                            class="pago-cupon-input"
+                    >
+                    <button id="pago-cupon-btn" class="pago-cupon-btn">Aplicar</button>
+                </div>
+                <span id="pago-cupon-msg" class="pago-cupon-msg"></span>
+            </div>
+
+            <div class="pago-sep"></div>
+
+            <!-- Totales -->
+            <div class="pago-resumen-linea">
+                <span>Subtotal</span>
+                <span id="pago-subtotal">€ 61.5</span>
+            </div>
+            <div class="pago-resumen-linea">
+                <span>Envío</span>
+                <span>Gratis</span>
+            </div>
+            <div class="pago-resumen-linea" id="pago-linea-descuento" style="display:none;">
+                <span>Descuento</span>
+                <span id="pago-descuento"></span>
+            </div>
+
+            <div class="pago-sep"></div>
+
+            <div class="pago-resumen-total">
+                <span>Total</span>
+                <span id="pago-total">€ 61.5</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- ══════════ MODAL CONFIRMACIÓN ══════════ -->
+<div id="pago-modal" class="pago-modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="pago-modal-card">
+        <div class="pago-modal-check">✓</div>
+        <h2 id="modal-titulo" class="pago-modal-titulo">
+            Tu pedido se ha<br>realizado correctamente
+        </h2>
+        <p class="pago-modal-texto">
+            Recibirás un correo de confirmación<br>
+            con los detalles de tu pedido.
+        </p>
+        <div class="pago-modal-ref">
+            <span class="pago-modal-ref-label">Referencia</span>
+            <span id="pago-modal-ref-num" class="pago-modal-ref-num"></span>
+        </div>
+        <a href="index.html" class="pago-modal-btn">&gt; Volver al inicio</a>
+    </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="contacto" data-theme="dark">
+    <div class="footer-top">
+
+        <div class="footer-newsletter">
+            <p>¿Quieres enterarte de las<br>últimas noticias?</p>
+            <small>
+                Lorem ipsum dolor sit amet, consectetuer<br>
+                adipiscing elit, sed diam nonummy nibh<br>
+                euismod tincidunt ut laoreet dolore magnu<span class="dot">●</span>
+            </small>
+            <div class="footer-email-row">
+                <input type="email" placeholder="correo@gmail.com" aria-label="Email">
+                <button aria-label="Enviar">→</button>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <ul class="footer-nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tienda.html">Shop</a></li>
+                <li><a href="laboratorio.html">Laboratory</a></li>
+                <li><a href="carro.html">Cart .</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Información</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <ul class="footer-nav-list">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Tik Tok</a></li>
+                <li><a href="#">Facebook</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 "MARCA"</span>
+        <div class="footer-bottom-links">
+            <a href="#">Términos y condiciones de compra</a>
+            <a href="#">Términos legales</a>
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Configurar cookies</a>
+        </div>
+    </div>
+</footer>
+
+<script src="java.js"></script>
+<script src="pago.js"></script>
+</body>
+</html>

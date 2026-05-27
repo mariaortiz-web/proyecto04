@@ -11,7 +11,7 @@
 
 <!-- NAVBAR (copiado de INICIO.html) -->
 <nav id="navbar" class="on-light">
-    <span class="nav-logo">logotipo</span>
+    <a href="index.html" class="nav-logo">logotipo</a>
 
     <div class="nav-center">
         <input type="text" placeholder="" aria-label="Buscar">
@@ -32,9 +32,169 @@
 </nav>
 
 <!-- Contenido específico de la página -->
-<main style="padding: calc(var(--nav-h) + 20px) 4% 60px;">
-    <h1>Carro</h1>
-    <p>Página de carrito. Reemplaza este contenido con el HTML específico de la página.</p>
+<!-- ══════════ CARRO ══════════ -->
+<main id="carro-page" data-theme="light">
+
+    <h1 class="carro-titulo reveal">Carro</h1>
+
+    <div class="carro-layout">
+
+        <!-- ── COLUMNA IZQUIERDA: lista de productos ── -->
+        <div class="carro-items">
+
+            <!-- Cabecera de la tabla -->
+            <div class="carro-tabla-header">
+                <span>Producto</span>
+                <span>Precio</span>
+                <span>Cantidad</span>
+                <span>Total</span>
+            </div>
+
+            <div class="carro-sep"></div>
+
+            <!-- Item 1 -->
+            <div class="carro-item reveal" data-id="1">
+                <div class="carro-item-producto">
+                    <div class="carro-item-img">
+                        <img src="imagenes/vol01.jpg" alt="Vol. 01 Las Solanaceas">
+                        <!-- Placeholder: <div class="img-ph" style="height:100%;"></div> -->
+                    </div>
+                    <div class="carro-item-info">
+                        <span class="carro-item-nombre">Vol. 01 Las Solanaceas</span>
+                        <span class="carro-item-variante">Membresía Básica</span>
+                        <button class="carro-item-eliminar" data-id="1">Eliminar</button>
+                    </div>
+                </div>
+                <span class="carro-item-precio">€ 20.5</span>
+                <div class="carro-cantidad">
+                    <button class="carro-cant-btn" data-action="restar" data-id="1">−</button>
+                    <span class="carro-cant-num">1</span>
+                    <button class="carro-cant-btn" data-action="sumar" data-id="1">+</button>
+                </div>
+                <span class="carro-item-total">€ 20.5</span>
+            </div>
+
+            <div class="carro-sep"></div>
+
+            <!-- Item 2 -->
+            <div class="carro-item reveal" data-id="2">
+                <div class="carro-item-producto">
+                    <div class="carro-item-img">
+                        <img src="imagenes/vol02.jpg" alt="Vol. 02 Las Solanaceas">
+                    </div>
+                    <div class="carro-item-info">
+                        <span class="carro-item-nombre">Vol. 02 Las Solanaceas</span>
+                        <span class="carro-item-variante">Membresía Plus</span>
+                        <button class="carro-item-eliminar" data-id="2">Eliminar</button>
+                    </div>
+                </div>
+                <span class="carro-item-precio">€ 20.5</span>
+                <div class="carro-cantidad">
+                    <button class="carro-cant-btn" data-action="restar" data-id="2">−</button>
+                    <span class="carro-cant-num">1</span>
+                    <button class="carro-cant-btn" data-action="sumar" data-id="2">+</button>
+                </div>
+                <span class="carro-item-total">€ 20.5</span>
+            </div>
+
+            <div class="carro-sep"></div>
+
+            <!-- Item 3 -->
+            <div class="carro-item reveal" data-id="3">
+                <div class="carro-item-producto">
+                    <div class="carro-item-img">
+                        <img src="imagenes/vol03.jpg" alt="Vol. 03 Las Solanaceas">
+                    </div>
+                    <div class="carro-item-info">
+                        <span class="carro-item-nombre">Vol. 03 Las Solanaceas</span>
+                        <span class="carro-item-variante">Gratuita</span>
+                        <button class="carro-item-eliminar" data-id="3">Eliminar</button>
+                    </div>
+                </div>
+                <span class="carro-item-precio">€ 20.5</span>
+                <div class="carro-cantidad">
+                    <button class="carro-cant-btn" data-action="restar" data-id="3">−</button>
+                    <span class="carro-cant-num">1</span>
+                    <button class="carro-cant-btn" data-action="sumar" data-id="3">+</button>
+                </div>
+                <span class="carro-item-total">€ 20.5</span>
+            </div>
+
+            <div class="carro-sep"></div>
+
+            <!-- Enlace seguir comprando -->
+            <div class="carro-seguir">
+                <a href="tienda.html" class="carro-link-tienda">← Seguir comprando</a>
+            </div>
+
+        </div>
+
+        <!-- ── COLUMNA DERECHA: resumen del pedido ── -->
+        <div class="carro-resumen reveal">
+
+            <h2 class="carro-resumen-titulo">Resumen del pedido</h2>
+            <div class="carro-sep"></div>
+
+            <div class="carro-resumen-linea">
+                <span>Subtotal</span>
+                <span id="carro-subtotal">€ 61.5</span>
+            </div>
+
+            <div class="carro-resumen-linea">
+                <span>Envío</span>
+                <span>Calculado al tramitar</span>
+            </div>
+
+            <div class="carro-resumen-linea">
+                <span>Descuento</span>
+                <span id="carro-descuento">— €</span>
+            </div>
+
+            <div class="carro-sep"></div>
+
+            <!-- Código descuento -->
+            <div class="carro-cupon">
+                <label class="carro-cupon-label">Código de descuento</label>
+                <div class="carro-cupon-row">
+                    <input
+                            type="text"
+                            id="carro-cupon-input"
+                            placeholder="Introduce tu código"
+                            class="carro-cupon-input"
+                    >
+                    <button id="carro-cupon-btn" class="carro-cupon-btn">Aplicar</button>
+                </div>
+                <span id="carro-cupon-msg" class="carro-cupon-msg"></span>
+            </div>
+
+            <div class="carro-sep"></div>
+
+            <div class="carro-resumen-total">
+                <span>Total</span>
+                <span id="carro-total">€ 61.5</span>
+            </div>
+
+            <button id="carro-tramitar-btn" class="carro-btn-tramitar">
+                &gt; Tramitar pedido
+            </button>
+
+            <p class="carro-aviso">
+                Los impuestos e IVA se calculan<br>
+                durante el proceso de pago.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Estado vacío (oculto por defecto) -->
+    <div id="carro-vacio" class="carro-vacio" style="display:none;">
+        <p>Tu carro está vacío.</p>
+        <a href="tienda.html" class="carro-btn-tramitar" style="display:inline-block; text-decoration:none; text-align:center;">
+            &gt; Ver productos
+        </a>
+    </div>
+
 </main>
 
 <!-- FOOTER (copiado de INICIO.html) -->
