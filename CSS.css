@@ -3835,6 +3835,57 @@ footer {
     opacity: 1;
 }
 
+/* ── CARRITO: Animaciones de feedback ── */
+.cart-toast {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: var(--dark);
+    color: var(--cream);
+    padding: 14px 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    border-radius: 2px;
+    z-index: 200;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.cart-toast.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botón añadir con animación */
+[class*="btn-carrito"] {
+    position: relative;
+    overflow: hidden;
+}
+
+[class*="btn-carrito"].added {
+    background: var(--accent) !important;
+    color: var(--cream) !important;
+    animation: cartBtnPulse 0.8s ease-out;
+}
+
+@keyframes cartBtnPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Flash en carrito del navbar */
+.cart-link.cart-flash {
+    animation: flashLink 0.9s ease-in-out;
+}
+
+@keyframes flashLink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
     .lab-int-grid {
