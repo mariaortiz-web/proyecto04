@@ -763,6 +763,101 @@ footer {
     opacity: 0.75;
 }
 
+/* Footer responsive */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 3% 0;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-bottom: 30px;
+    }
+
+    .footer-newsletter {
+        margin-bottom: 16px;
+    }
+
+    .footer-newsletter p {
+        font-size: 12px;
+    }
+
+    .footer-newsletter small {
+        font-size: 10px;
+    }
+
+    .footer-col h4 {
+        font-size: 10px;
+    }
+
+    .footer-nav-list a {
+        font-size: 10px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        font-size: 9px;
+        padding: 16px 0;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .footer-bottom-links a {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 30px 2% 0;
+    }
+
+    .footer-top {
+        gap: 16px;
+        padding-bottom: 20px;
+    }
+
+    .footer-newsletter p {
+        font-size: 11px;
+    }
+
+    .footer-newsletter small {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    .footer-email-row input {
+        font-size: 9px;
+    }
+
+    .footer-col h4 {
+        font-size: 9px;
+        margin-bottom: 10px;
+    }
+
+    .footer-nav-list a {
+        font-size: 9px;
+    }
+
+    .footer-nav-list li {
+        margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+        padding: 12px 0;
+    }
+
+    .footer-bottom-links a {
+        font-size: 8px;
+    }
+}
+
 
 /* ════════════════════════════════════════
    PLACEHOLDERS DE IMAGEN
@@ -1190,7 +1285,7 @@ footer {
 /* Si usas imagen real: */
 .lab-img-wrap img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1.2;
     display: block;
     object-fit: cover;
     filter: brightness(0.95) contrast(1.05);
@@ -3886,62 +3981,3 @@ footer {
     50% { opacity: 0.4; }
 }
 
-/* ── Responsive ── */
-@media (max-width: 900px) {
-    .lab-int-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .lab-int-card-grande {
-        grid-column: 1 / 3;
-        grid-row: auto;
-    }
-
-    .lab-int-card-exclusivo {
-        grid-column: 1 / 3;
-    }
-}
-
-@media (max-width: 768px) {
-    .lab-login-card {
-        padding: 36px 28px 32px;
-    }
-
-    .lab-login-titulo {
-        font-size: 16px;
-    }
-
-    .lab-int-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .lab-int-header-meta {
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 600px) {
-    .lab-int-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .lab-int-card-grande,
-    .lab-int-card-exclusivo {
-        grid-column: 1;
-    }
-
-    .lab-login-card {
-        padding: 28px 20px 26px;
-    }
-
-    .lab-input {
-        font-size: 10px;
-        padding: 14px 14px;
-    }
-
-    .lab-btn-entrar {
-        font-size: 10px;
-        padding: 14px;
-    }
-}

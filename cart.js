@@ -181,19 +181,18 @@ function setupCouponOnCartPage() {
 // Setup add to cart buttons for product pages and membership pages
 function setupAddToCartButtons() {
     // Producto page (producto1.html)
-    const prodBtn = document.getElementById('prod-btn-carrito');
+    var prodBtn = document.getElementById('prod-btn-carrito');
     if (prodBtn) {
-        prodBtn.addEventListener('click', () => {
-            const item = { 
-                id: 'vol01', 
-                title: 'Vol. 01 Las Solanaceas', 
-                price: 20.5, 
-                image: 'imagenes/vol01.jpg', 
-                qty: 1 
-            };
-            window.agregarAlCarrito(item);
+        prodBtn.addEventListener('click', function () {
+            window.agregarAlCarrito({
+                id:    prodBtn.getAttribute('data-product-id'),
+                title: prodBtn.getAttribute('data-product-title'),
+                price: parseFloat(prodBtn.getAttribute('data-product-price')),
+                image: prodBtn.getAttribute('data-product-image'),
+                qty:   1
+            });
             prodBtn.classList.add('added');
-            setTimeout(() => prodBtn.classList.remove('added'), 900);
+            setTimeout(function () { prodBtn.classList.remove('added'); }, 900);
         });
     }
 
