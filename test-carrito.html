@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Carrito</title>
+</head>
+<body>
+    <h1>Test de Carrito</h1>
+    <p>Este archivo prueba el sistema de carrito.</p>
+
+    <button id="test-add-product">Agregar producto de prueba</button>
+    <button id="test-view-cart">Ver contenido del carrito</button>
+    <button id="test-clear-cart">Limpiar carrito</button>
+
+    <pre id="output" style="background: #f0f0f0; padding: 20px; margin-top: 20px;"></pre>
+
+    <script>
+        const CART_KEY = 'mi_carrito_v1';
+
+        function getCart() {
+            try {
+                return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        }
+
+        document.getElementById('test-add-product').addEventListener('click', function() {
+            const testProduct = {
+                id: 'test-prod-1',
+                title: 'Producto de Prueba',
+                price: 25.99,
+                image: 'imagenes/MOCKUP_REVISTA copia.jpg',
+                qty: 1
+            };
+
+            const cart = getCart();
+            const idx = cart.findIndex(i => i.id === testProduct.id);
+
+            if (idx > -1) {
+                cart[idx].qty++;
+            } else {
+                cart.push(testProduct);
+            }
+
+            saveCart(cart);
+            document.getElementById('output').textContent = '✓ Producto agregado al carrito.\n\n' + JSON.stringify(cart, null, 2);
+        });
+
+        document.getElementById('test-view-cart').addEventListener('click', function() {
+            const cart = getCart();
+            document.getElementById('output').textContent = 'Contenido del carrito:\n\n' + JSON.stringify(cart, null, 2);
+        });
+
+        document.getElementById('test-clear-cart').addEventListener('click', function() {
+            localStorage.removeItem(CART_KEY);
+            document.getElementById('output').textContent = '✓ Carrito limpiado.';
+        });
+
+        // Mostrar carrito al cargar
+        document.getElementById('test-view-cart').click();
+    </script>
+</body>
+</html>
+

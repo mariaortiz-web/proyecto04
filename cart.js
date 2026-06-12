@@ -96,7 +96,7 @@ function renderCartPage() {
 
     cart.forEach(item => {
         const row = document.createElement('div');
-        row.className = 'carro-item reveal';
+        row.className = 'carro-item';
         row.setAttribute('data-id', item.id);
         row.innerHTML = `
             <div class="carro-item-producto">
@@ -141,7 +141,17 @@ function renderCartPage() {
             renderCartPage();
         });
     });
-
+    // Botón tramitar → redirige a pago
+    var btnTramitar = document.getElementById('carro-tramitar-btn');
+    if (btnTramitar && !btnTramitar._listener) {
+        btnTramitar._listener = true;
+        btnTramitar.addEventListener('click', function () {
+            if (getCart().length === 0) return;
+            btnTramitar.textContent = '✓ Procesando...';
+            btnTramitar.disabled = true;
+            setTimeout(function () { window.location.href = 'pago.html'; }, 800);
+        });
+    }
     // update totals display
     updateTotalsDisplay();
 }

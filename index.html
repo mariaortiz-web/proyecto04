@@ -11,7 +11,10 @@
 
 <!-- ══════════ NAVBAR ══════════ -->
 <nav id="navbar" class="on-light">
-    <a href="index.html" class="nav-logo">logotipo</a>
+    <a href="index.html" class="nav-logo">
+        <img class="logo-dark" src="imagenes/logo.png" alt="MARCA logo">
+        <img class="logo-light" src="imagenes/logoblanco.png" alt="MARCA logo blanco">
+    </a>
 
     <div class="nav-center">
         <input type="text" placeholder="" aria-label="Buscar">
@@ -41,7 +44,11 @@
 
 
 
-    <img class="hero-bg-img" src="imagenes/b.png" alt="Hero Background"/>
+    <video class="hero-bg-img" autoplay muted loop playsinline preload="auto" width="1920" height="1080">
+        <source src="imagenes/video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento video.
+    </video>
+
 
     <!-- Texto superior derecha -->
     <div class="hero-text ht-topright reveal">
@@ -215,7 +222,7 @@
         <a href="producto1.html" class="latest-item reveal latest-link">
             <div class="latest-img-wrap">
                 <span class="latest-badge">NUEVO</span>
-                <img src="imagenes/MOCKUP_REVISTA%20copia.jpg" alt="Vol. 01 Las Solanaceas">
+                <img src="imagenes/MOCKUP_REVISTA copia.jpg" alt="Vol. 01 Las Solanaceas">
             </div>
             <div class="latest-info">
                 <span class="latest-item-label">Vol. 01 Las Solanaceas</span>
@@ -224,28 +231,28 @@
         </a>
 
         <!-- Item 2 -->
-        <div class="latest-item reveal">
+        <a href="producto1.html" class="latest-item reveal latest-link">
             <div class="latest-img-wrap">
                 <span class="latest-badge">NUEVO</span>
-                <img src="imagenes/MOCKUP_REVISTA%20copia.jpg" alt="Vol. 01 Las Solanaceas">
+                <img src="imagenes/MOCKUP_REVISTA copia.jpg" alt="Vol. 01 Las Solanaceas">
             </div>
             <div class="latest-info">
                 <span class="latest-item-label">Vol. 01 Las Solanaceas</span>
                 <span class="latest-price">€ 20.5</span>
             </div>
-        </div>
+        </a>
 
         <!-- Item 3 -->
-        <div class="latest-item reveal">
+        <a href="producto1.html" class="latest-item reveal latest-link">
             <div class="latest-img-wrap">
                 <span class="latest-badge">NUEVO</span>
-                <img src="imagenes/MOCKUP_REVISTA%20copia.jpg" alt="Vol. 01 Las Solanaceas">
+                <img src="imagenes/MOCKUP_REVISTA copia.jpg" alt="Vol. 01 Las Solanaceas">
             </div>
             <div class="latest-info">
                 <span class="latest-item-label">Vol. 01 Las Solanaceas</span>
                 <span class="latest-price">€ 20.5</span>
             </div>
-        </div>
+        </a>
 
     </div>
 </section>
@@ -327,6 +334,7 @@
 </div>
 
 <script src="java.js"></script>
+<script src="cart.js"></script>
 <script src="chat.js"></script>
 </body>
 </html>

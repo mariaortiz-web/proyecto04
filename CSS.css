@@ -63,6 +63,21 @@ body {
     transition: opacity 0.2s;
 }
 
+/* Logo image sizing: use a proportional image aligned top-left and prevent it from being too large */
+.nav-logo img {
+    display: block;
+    height: 40px; /* default height for desktop */
+    max-height: 48px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Show/hide dark/white logo variants depending on navbar theme */
+.nav-logo .logo-light { display: none; }
+.nav-logo .logo-dark  { display: inline-block; }
+.on-dark .nav-logo .logo-light { display: inline-block; }
+.on-dark .nav-logo .logo-dark  { display: none; }
+
 .nav-center {
     position: absolute;
     left: 50%;
@@ -188,6 +203,12 @@ body {
     object-fit: cover;
 }
 
+ /* Asegurar que videos funcionen correctamente como fondo */
+ video.hero-bg-img {
+     display: block;
+     object-position: center;
+ }
+
 /* Textos flotantes genéricos */
 .hero-text {
     position: absolute;
@@ -209,11 +230,13 @@ body {
     top: 20%;
     right: 30%;
     text-align: right;
+    color: #ffffff;
 }
 
 .ht-center {
     top: 68%;
     left: 36%;
+    color: #ffffff;
 }
 
 .ht-botright {
@@ -221,6 +244,7 @@ body {
     right: 15%;
     text-align: right;
     font-size: 12px;
+    color: #ffffff;
 }
 
 /* Bloque izquierdo: texto + botón */
@@ -232,6 +256,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 22px;
+    color: #ffffff;
 }
 
 .hero-left-block p {
@@ -514,6 +539,22 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: start;
+}
+
+/* Prevent product links from showing default visited (purple) color */
+.latest-grid a:link,
+.latest-grid a:visited,
+.latest-item a:link,
+.latest-item a:visited,
+.latest-link:link,
+.latest-link:visited {
+    color: inherit;
+}
+
+/* Also ensure tienda grid links keep inherited color when visited */
+.tienda-grid a:link,
+.tienda-grid a:visited {
+    color: inherit;
 }
 
 .latest-item {
@@ -912,6 +953,10 @@ footer {
     .nav-logo {
         font-size: 12px;
     }
+    .nav-logo img {
+        height: 32px;
+        max-height: 36px;
+    }
 
     .nav-center {
         display: none; /* Ocultar búsqueda en móviles */
@@ -1092,6 +1137,11 @@ footer {
 @media (max-width: 480px) {
     #navbar {
         padding: 0 15px;
+    }
+
+    .nav-logo img {
+        height: 28px;
+        max-height: 32px;
     }
 
     .nav-links {

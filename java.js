@@ -103,157 +103,14 @@ document.querySelectorAll('.reveal').forEach(function(el) {
 })();
 
 /* ════════════════════════════════════════
-   CARRO — lógica de cantidades, totales,
-   eliminación y cupón de descuento
+   CARRO — manejado completamente por cart.js
 ════════════════════════════════════════ */
 
 (function () {
+    // cart.js renderiza dinámicamente el contenido del carrito
+    // desde localStorage y maneja todos los eventos.
+    // Este módulo solo maneja el botón tramitar pedido.
 
-    /* ── Precios base por item ── */
-    var precios = {
-        '1': 20.5,
-        '2': 20.5,
-        '3': 20.5
-    };
-
-    var cantidades = {
-        '1': 1,
-        '2': 1,
-        '3': 1
-    };
-
-    var descuento = 0;
-
-    /* Cupones válidos */
-    var cupones = {
-        'MARCA10': 10,
-        'BIENVENIDO': 15,
-        '1234': 20
-    };
-
-    /* ── Actualizar total de un item ── */
-    function actualizarItem(id) {
-        var item = document.querySelector('.carro-item[data-id="' + id + '"]');
-        if (!item) return;
-
-        var cant = cantidades[id];
-        var precio = precios[id];
-
-        item.querySelector('.carro-cant-num').textContent = cant;
-        item.querySelector('.carro-item-total').textContent = '€ ' + (precio * cant).toFixed(1);
-
-        actualizarResumen();
-    }
-
-    /* ── Calcular y mostrar resumen ── */
-    function actualizarResumen() {
-        var subtotal = 0;
-
-        Object.keys(cantidades).forEach(function (id) {
-            if (precios[id] !== undefined) {
-                subtotal += precios[id] * cantidades[id];
-            }
-        });
-
-        var descuentoEuros = (subtotal * descuento / 100);
-        var total = subtotal - descuentoEuros;
-
-        var elSubtotal  = document.getElementById('carro-subtotal');
-        var elDescuento = document.getElementById('carro-descuento');
-        var elTotal     = document.getElementById('carro-total');
-
-        if (elSubtotal)  elSubtotal.textContent  = '€ ' + subtotal.toFixed(1);
-        if (elDescuento) elDescuento.textContent  = descuento > 0
-            ? '− € ' + descuentoEuros.toFixed(1) + ' (' + descuento + '%)'
-            : '— €';
-        if (elTotal)     elTotal.textContent      = '€ ' + total.toFixed(1);
-
-        comprobarVacio();
-    }
-
-    /* ── Comprobar si el carro está vacío ── */
-    function comprobarVacio() {
-        var itemsRestantes = document.querySelectorAll('.carro-item');
-        var vacio = document.getElementById('carro-vacio');
-        var layout = document.querySelector('.carro-layout');
-
-        if (itemsRestantes.length === 0) {
-            if (layout) layout.style.display = 'none';
-            if (vacio)  vacio.style.display  = 'flex';
-        }
-    }
-
-    /* ── Botones + y − de cantidad ── */
-    document.querySelectorAll('.carro-cant-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var id     = btn.dataset.id;
-            var accion = btn.dataset.action;
-
-            if (accion === 'sumar') {
-                cantidades[id] = (cantidades[id] || 1) + 1;
-            } else if (accion === 'restar') {
-                if (cantidades[id] > 1) {
-                    cantidades[id]--;
-                }
-            }
-
-            actualizarItem(id);
-        });
-    });
-
-    /* ── Eliminar item ── */
-    document.querySelectorAll('.carro-item-eliminar').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var id   = btn.dataset.id;
-            var item = document.querySelector('.carro-item[data-id="' + id + '"]');
-            var sep  = item ? item.nextElementSibling : null;
-
-            if (item) {
-                item.classList.add('eliminando');
-
-                setTimeout(function () {
-                    item.remove();
-                    if (sep && sep.classList.contains('carro-sep')) sep.remove();
-                    delete precios[id];
-                    delete cantidades[id];
-                    actualizarResumen();
-                }, 320);
-            }
-        });
-    });
-
-    /* ── Cupón de descuento ── */
-    var btnCupon  = document.getElementById('carro-cupon-btn');
-    var inputCupon = document.getElementById('carro-cupon-input');
-    var msgCupon  = document.getElementById('carro-cupon-msg');
-
-    if (btnCupon && inputCupon) {
-        btnCupon.addEventListener('click', function () {
-            var codigo = inputCupon.value.trim().toUpperCase();
-
-            if (cupones[codigo]) {
-                descuento = cupones[codigo];
-                msgCupon.textContent  = '✓ Código aplicado: ' + descuento + '% de descuento';
-                msgCupon.className    = 'carro-cupon-msg ok';
-                inputCupon.disabled   = true;
-                btnCupon.disabled     = true;
-                btnCupon.style.opacity = '0.3';
-            } else {
-                msgCupon.textContent = '✗ Código no válido';
-                msgCupon.className   = 'carro-cupon-msg err';
-                inputCupon.value     = '';
-            }
-
-            actualizarResumen();
-        });
-
-        /* Aplicar con Enter */
-        inputCupon.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') btnCupon.click();
-        });
-    }
-
-    /* ── Botón tramitar pedido ── */
     var btnTramitar = document.getElementById('carro-tramitar-btn');
 
     if (btnTramitar) {
@@ -264,21 +121,18 @@ document.querySelectorAll('.reveal').forEach(function(el) {
                 return;
             }
 
-            /* Feedback visual */
-            var textoOriginal    = btnTramitar.textContent;
-            btnTramitar.textContent  = '✓ Procesando...';
+            var textoOriginal = btnTramitar.textContent;
+            btnTramitar.textContent = '✓ Procesando...';
             btnTramitar.disabled = true;
 
-             setTimeout(function () {
-                 btnTramitar.textContent  = textoOriginal;
-                 btnTramitar.disabled = false;
-                 window.location.href = 'pagar.html';
-             }, 2000);
+            setTimeout(function () {
+                btnTramitar.textContent = textoOriginal;
+                btnTramitar.disabled = false;
+                window.location.href = 'pagar.html';
+            }, 2000);
         });
     }
 
-    /* Inicializar totales al cargar */
-    actualizarResumen();
 
 })();
 /* ════════════════════════════════════════
